@@ -10,15 +10,15 @@
 </head>
 <body>
     <main>
-        <section>
-            <h1>Cifra de Bruninho</h1>
+        <h1>Cifra de Bruninho</h1>
             <form class="formulario" id="formulario" action="#">
                 <div>
                     <div class="area-entrada">
                         <label>Escreva aqui a mensagem que deseja codificar ou decodificar:</label>
                         <textarea name="mensagem"></textarea>
+                    </div>
                 </div>
-                <div>
+                <div class="cartao-container-tipo-base">
                     <fieldset class="container-tipo-base">
                         <legend>Escolha o tipo de código:</legend>
                         <div>
@@ -31,7 +31,12 @@
                         </div>
                     </fieldset>
                 </div>
-                <div>
+                <div class="container-incremento">
+                    <label for="barrinha">Incremento</label>
+                    <input type="range" min="-0" max="37" id="barrinha" name="barrinha-incremento">
+                    <label for="barrinha" id="numero-incremento">0</label>
+                </div>
+                <div class="cartao-container-decodificar-codificar">
                     <fieldset class="container-decodificar-codificar">
                         <legend>Escolha a operação: </legend>
                         <div>
@@ -45,13 +50,15 @@
                     </fieldset>
                 </div>
                 <div>
+                    <button id="botao-cod-decod">Codificar</button>
+                </div>
+                <div>
                     <div class="container-mensagem-decodificada">
                         <label>Resultado da operação:</label>
-                        <textarea name="mensagem"></textarea>
+                        <textarea name="mensagem" placeholder="Resultado da operação:"></textarea>
                     </div>
                 </div>
-            </form>
-        </section>
+        </form>
     </main>
 </body>
 </html>

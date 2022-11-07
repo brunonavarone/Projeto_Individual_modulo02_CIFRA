@@ -9,19 +9,29 @@
 {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    
+    
+    
 }
 
 :root
 {
     --corDeFundo: rgb(61, 0, 79);
     --corDeFundo02: rgb(38, 0, 49);
-    --corDoTexto: rgb(180, 136, 180);
+    --corDoTexto: rgb(255, 220, 255);
 }
 
 body
 {
     background-color: var(--corDeFundo);
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+h1
+{
+    margin-bottom: 20px;
 }
 
 h1, form label, form legend
@@ -32,7 +42,7 @@ h1, form label, form legend
 }
 
 
-section
+main
 {
     height: 100vh;
     width: 100vw;
@@ -40,12 +50,30 @@ section
     flex-direction: column;
     justify-content:center;
     align-items: center;
+    font-family: 'pixelzinho';
 }
 
 .area-entrada
 {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.area-entrada textarea
+{
+    margin-bottom: 20px;
+    font-family: 'pixelzinho';
+}
+
+.cartao-container-tipo-base, .cartao-container-decodificar-codificar
+{
+    width: 57%;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
 }
 
 .container-decodificar-codificar, .container-tipo-base
@@ -54,12 +82,30 @@ section
     justify-content: space-evenly;
     border-radius: 10px;
     max-width: 100vw;
+    margin-bottom: 15px;
 }
+
 
 .container-mensagem-decodificada
 {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-mensagem-decodificada label, .area-entrada label
+{
+    margin-bottom: 10px;
+}
+
+.formulario
+{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    
 }
 
 .formulario label, .formulario legend
@@ -67,8 +113,38 @@ section
     text-align: center;
 }
 
+.container-incremento
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /*display: none;*/
+}
+
+#botao-cod-decod
+{
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: var(--corDoTexto);
+    color: var(--corDeFundo02);
+}
+
 .formulario textarea
 {
     border-radius: 10px;
     max-width: 100vw;
+    padding: 5px;
+    font-family: 'pixelzinho';
+}
+
+textarea{
+    width: 450px;
+    height: 140px;
+    border: 3px solid black;
+    border-radius: 5px;
+    resize: none;
+    padding: 10px;
 }
