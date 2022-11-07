@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/scripts.js"></script>
+    <title>Projeto Individual - Bruno Henrique</title>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Cifra de Bruninho</h1>
+            <form class="formulario" id="formulario" action="#">
+                <div>
+                    <div class="area-entrada">
+                        <label>Escreva aqui a mensagem que deseja codificar ou decodificar:</label>
+                        <textarea name="mensagem"></textarea>
+                </div>
+                <div>
+                    <fieldset class="container-tipo-base">
+                        <legend>Escolha o tipo de código:</legend>
+                        <div>
+                          <input type="radio" id="cifra" name="tipoCodigo" checked>
+                          <label for="cifra">Cifra de césar</label>
+                        </div>
+                        <div>
+                          <input type="radio" id="base64" name="tipoCodigo">
+                          <label for="base64">base64</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div>
+                    <fieldset class="container-decodificar-codificar">
+                        <legend>Escolha a operação: </legend>
+                        <div>
+                          <input type="radio" id="codificar" name="tipo-cod-dec" checked>
+                          <label for="codificar">Codificar</label>
+                        </div>
+                        <div>
+                          <input type="radio" id="decodificar" name="tipo-cod-dec">
+                          <label for="decodificar">Decodificar</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div>
+                    <div class="container-mensagem-decodificada">
+                        <label>Resultado da operação:</label>
+                        <textarea name="mensagem"></textarea>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
