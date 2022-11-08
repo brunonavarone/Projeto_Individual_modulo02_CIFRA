@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/scripts.js"></script>
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Projeto Individual - Bruno Henrique</title>
 </head>
 <body>
@@ -13,9 +12,9 @@
         <h1>Cifra de Bruninho</h1>
             <form class="formulario" id="formulario" action="#">
                 <div>
-                    <div class="area-entrada">
+                    <div class="area-entrada" id="area-entrada">
                         <label>Escreva aqui a mensagem que deseja codificar ou decodificar:</label>
-                        <textarea name="mensagem"></textarea>
+                        <textarea name="mensagem" id="texto-entrada"></textarea>
                     </div>
                 </div>
                 <div class="cartao-container-tipo-base">
@@ -33,7 +32,7 @@
                 </div>
                 <div class="container-incremento">
                     <label for="barrinha">Incremento</label>
-                    <input type="range" min="-0" max="37" id="barrinha" name="barrinha-incremento">
+                    <input type="range" min="0" max="37" id="barrinha" name="barrinha-incremento">
                     <label for="barrinha" id="numero-incremento">0</label>
                 </div>
                 <div class="cartao-container-decodificar-codificar">
@@ -50,15 +49,16 @@
                     </fieldset>
                 </div>
                 <div>
-                    <button id="botao-cod-decod">Codificar</button>
+                    <button id="botao-principal" class="botao-principal">Codificar</button>
                 </div>
                 <div>
                     <div class="container-mensagem-decodificada">
                         <label>Resultado da operação:</label>
-                        <textarea name="mensagem" placeholder="Resultado da operação:"></textarea>
+                        <textarea name="mensagem" id="texto-saída" placeholder="Resultado da operação:"></textarea>
                     </div>
                 </div>
         </form>
     </main>
 </body>
+<script src="scripts/script_principal.js"></script>
 </html>
