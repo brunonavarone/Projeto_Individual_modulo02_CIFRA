@@ -29,13 +29,20 @@ botao_Principal.addEventListener("click", function ()
 {
     if(radio_Cifra.checked)
     {
-        alert("Cifra de Cesar selecionada!", mensagem_Entrada.value);
+        if(radio_Codificar.checked)
+        {
+            alert("Cifra de Cesar selecionada!");
+        }
+        
     }
     else if(radio_Base64.checked)
     {
-        alert("Base64 selecionada!", mensagem_Entrada.value);
+        alert("Base64 selecionada!");
     }
 });
+
+
+
 // Switch 
 
 /*var radio = document.querySelectorAll(".radio");
