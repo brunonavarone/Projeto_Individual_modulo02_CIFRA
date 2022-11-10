@@ -1,16 +1,19 @@
 console.log("Fora bozo! >.<'")
 
 //definindo as variaveis que vão ser utilizadas/acessadas diretamente do HTML
-const mensagem_Entrada = document.getElementById("texto-entrada");
-const radio_Cifra = document.getElementById("cifra");
-const radio_Base64 = document.getElementById("base64");
-const barra_Incremento = document.getElementById("barrinha");
-const valor_Barra_Incremento = document.getElementById("numero-incremento");
-const radio_Codificar = document.getElementById("codificar");
-const radio_Decodificar = document.getElementById("decodificar");
-const botao_Principal = document.getElementById("botao-principal");
-const mensagem_Saida = document.getElementById("texto-saida");
-const caixinha_Incremento = document.querySelector(".container-incremento");
+var mensagem_Entrada = document.getElementById("texto-entrada");
+var radio_Cifra = document.getElementById("cifra");
+var radio_Base64 = document.getElementById("base64");
+var barra_Incremento = document.getElementById("barrinha");
+var valor_Barra_Incremento = document.getElementById("numero-incremento");
+var radio_Codificar = document.getElementById("codificar");
+var radio_Decodificar = document.getElementById("decodificar");
+var botao_Principal = document.getElementById("botao-principal");
+var mensagem_Saida = document.getElementById("texto-saida");
+var caixinha_Incremento = document.querySelector(".container-incremento");
+
+var conteudo_Mensagem_Entrada = mensagem_Entrada.value.split("");
+var valor_Incremento = parseInt(valor_Barra_Incremento.value);
 
 
 radio_Cifra.addEventListener("click", function ()
@@ -23,7 +26,21 @@ radio_Base64.addEventListener("click", function ()
     caixinha_Incremento.style.display = 'none';
 })
 
+radio_Codificar.addEventListener("click", function ()
+{
+    if(radio_Codificar.checked)
+    {
+        botao_Principal.innerText = "Codificar";
+    }
+})
 
+radio_Decodificar.addEventListener("click", function ()
+{
+    if(radio_Decodificar.checked)
+    {
+        botao_Principal.innerText = "Decodificar";
+    }
+})
 
 botao_Principal.addEventListener("click", function ()
 {
@@ -31,17 +48,41 @@ botao_Principal.addEventListener("click", function ()
     {
         if(radio_Codificar.checked)
         {
-            alert("Cifra de Cesar selecionada!");
+            alert("Cifra de Cesar selecionada para Codificar1");
         }
-        
+
+        else if(radio_Decodificar.checked)
+        {
+            alert("Cifra de Cesar selecionada para Decodificar1");
+        }
     }
     else if(radio_Base64.checked)
     {
-        alert("Base64 selecionada!");
+      if(radio_Codificar.checked)
+      {
+            alert("Base64 selecionada para Decodificar!");
+            mensagem_Saida = codificar_Base64(mensagem_Entrada.value);
+            alert(mensagem_Saida)
+      }
+
+      else if(radio_Decodificar)
+      {
+            alert("Base64 selecionada para Codificar!");
+            mensagem_Saida = decodificar_Base64(mensagem_Entrada.value);
+            alert(mensagem_Saida)
+      }
     }
 });
 
+function codificar_Base64(valorCodificar)
+{
+  return btoa(valorCodificar);
+}
 
+function decodificar_Base64(valorDecodificar)
+{
+  return atob(valorDecodificar);
+}
 
 // Switch 
 
@@ -113,19 +154,4 @@ function decodificarCesar(msg, chave) {
       }
     })
     .join("");
-}
-
-// Switch button's text
-radio[0].addEventListener("click", function () {
-  if (radio[0].checked) {
-    botao.style.display = 'block';
-    botao.innerText = 'Encode';
-  }
-});
-
-radio[1].addEventListener("click", function () {
-  if (radio[1].checked) {
-    botao.style.display = 'block';
-    botao.innerText = 'Decode';
-  }
-});*/
+}*/
