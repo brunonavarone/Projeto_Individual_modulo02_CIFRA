@@ -42,18 +42,27 @@ radio_Decodificar.addEventListener("click", function ()
     }
 })
 
-botao_Principal.addEventListener("click", function ()
+botao_Principal.addEventListener("click", function (event)
 {
+    event.preventDefault();
     if(radio_Cifra.checked)
     {
         if(radio_Codificar.checked)
         {
             alert("Cifra de Cesar selecionada para Codificar1");
+            var valorMsg = mensagem_Entrada.value.split("");
+            var valorIncremento = parseInt(valor_Barra_Incremento.value);
+            conteudo_Mensagem_Entrada = codificar_Cifra(valorMsg, valorIncremento);
+            alert(conteudo_Mensagem_Entrada)
         }
 
         else if(radio_Decodificar.checked)
         {
             alert("Cifra de Cesar selecionada para Decodificar1");
+            var valorMsg = mensagem_Entrada.value.split("");
+            var valorIncremento = parseInt(valor_Barra_Incremento.value);
+            conteudo_Mensagem_Entrada = decodificar_Cifra_Cifra(valorMsg, valorIncremento);
+            alert(conteudo_Mensagem_Entrada)
         }
     }
     else if(radio_Base64.checked)
@@ -84,6 +93,62 @@ function decodificar_Base64(valorDecodificar)
   return atob(valorDecodificar);
 }
 
+function codificar_Cifra(mensagemTexto, chaveIncremento)
+{
+  return mensagemTexto.map((str) => 
+  {
+    var entrada = str.charCodeAt();
+    if(entrada >= 65 && entrada <= 90)
+    {
+        return String.fromCharCode(((entrada - 65 + chaveIncremento) % 26) + 65)
+    }
+    else if(entrada >= 97 && entrada <= 122)
+    {
+        return String.fromCharCode(((entrada - 97 + chaveIncremento) % 26) + 97)
+    }
+    else
+    {
+        return str;
+    }
+  }).join("");
+}
+
+function decodificar_Cifra(mensagemTexto, chaveIncremento)
+{
+  return mensagemTexto.map((str) =>
+  {
+        var entrada = str.charCodeAt();
+        if(entrada >= 65 && rntrada <= 90)
+        {
+          if(entrada - 65 - chaveIncremento < 0)
+          {
+            return String.fromCharCode(((entrada - 65 - chaveIncremento + 26) % 26) + 65)
+          }
+          else
+          {
+            return String.fromCharCode(((entrada - 65 - chaveIncremento) % 26) + 65)
+          }
+        }
+        else if(entrada >= 97 && entrada <= 122)
+        {
+            if(entrada - 97 - chaveIncremento < 0)
+            {
+                return String.fromCharCode(((entrada - 97 - chaveIncremento + 26) % 26) + 97)
+            }
+            else
+            {
+                return String.fromCharCode(((entrada - 97 - chaveIncremento) % 26) + 97)
+            }
+        }
+        else
+        {
+          return str;
+        }
+  }).join("");
+}
+
+
+
 // Switch 
 
 /*var radio = document.querySelectorAll(".radio");
@@ -95,41 +160,19 @@ var resultado = document.getElementById("resultado");
 botao.addEventListener("click", function (event) {
   event.preventDefault();
   var codigo = document.getElementById("codigo").value;
-  if (codigo == "cesar" && radio[0].checked) {
+  if (codigo == "cesar" && radio[0].checked)
+  {
     var valorMsg = mensagem.value.split("");
     var valorChave = parseInt(chave.value);
     resultado.value = codificarCesar(valorMsg, valorChave);
-  } else if (codigo == "cesar" && radio[1].checked) {
+  }
+  else if(codigo == "cesar" && radio[1].checked)
+  {
     var valorMsg = mensagem.value.split("");
     var valorChave = parseInt(chave.value);
     resultado.value = decodificarCesar(valorMsg, valorChave);
 
-// Base64 encoder and decoder
-  } else if (codigo == "base64" && radio[0].checked) {
-    var valorMsg = mensagem.value;
-    resultado.value = btoa(valorMsg);
-  } else {
-    var valorMsg = mensagem.value;
-    resultado.value = atob(valorMsg);
-  }
-});
 
-// Caesar Cipher encoder
-
-function codificarCesar(msg, chave) {
-  return msg
-    .map((str) => {
-      var entrada = str.charCodeAt();
-      if (entrada >= 65 && entrada <= 90) {
-        return String.fromCharCode(((entrada - 65 + chave) % 26) + 65);
-      } else if (entrada >= 97 && entrada <= 122) {
-        return String.fromCharCode(((entrada - 97 + chave) % 26) + 97);
-      } else {
-        return str;
-      }
-    })
-    .join("");
-}
 
 // Caesar Cipher decoder
 
@@ -154,4 +197,63 @@ function decodificarCesar(msg, chave) {
       }
     })
     .join("");
+
+function decodificarCesar(msg, chave) {
+  return msg
+    .map((str) => {
+      var entrada = str.charCodeAt();
+      if (entrada >= 65 && entrada <= 90)
+      {
+        if (entrada - 65 - chave < 0)
+        {
+          return String.fromCharCode(((entrada - 65 - chave + 26) % 26) + 65);
+        }
+        else
+        {
+          return String.fromCharCode(((entrada - 65 - chave) % 26) + 65);
+        }
+      } 
+      else if (entrada >= 97 && entrada <= 122)
+      {
+        if(entrada - 97 - chave < 0)
+        {
+          return String.fromCharCode(((entrada - 97 - chave + 26) % 26) + 97);
+        }
+        else
+        {
+          return String.fromCharCode(((entrada - 97 - chave) % 26) + 97);
+        }
+      } 
+      else
+      {
+        return str;
+      }
+    })
+    .join("");
+
+
+
+// Caesar Cipher encoder
+
+function codificarCesar(msg, chave)
+{
+  return msg
+    .map((str) => {
+      var entrada = str.charCodeAt();
+      if(entrada >= 65 && entrada <= 90)
+      {
+        return String.fromCharCode(((entrada - 65 + chave) % 26) + 65);
+      }
+      else if(entrada >= 97 && entrada <= 122)
+      {
+      return String.fromCharCode(((entrada - 97 + chave) % 26) + 97);
+      } 
+      else
+      {
+        return str;
+      }
+    })
+    .join("");
+}
+
 }*/
