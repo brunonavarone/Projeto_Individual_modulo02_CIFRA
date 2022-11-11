@@ -58,19 +58,14 @@ botao_Principal.addEventListener("click", function (event)
     {
       if(radio_Codificar.checked)
       {
-            alert("Base64 selecionada para Codificar!");
-            mensagem_Saida = codificar_Base64(mensagem_Entrada.value);
-            console.log(mensagem_Saida)
+            mensagem_Saida.innerHTML = `<div><P>${codificar_Base64(mensagem_Entrada.value)}</P></div>`;
       }
 
       else if(radio_Decodificar)
-      {
-            alert("Base64 selecionada para Decodificar!");
-            mensagem_Saida = decodificar_Base64(mensagem_Entrada.value);
-            console.log(mensagem_Saida)
+      
+            mensagem_Saida.innerHTML = `<div><P>${decodificar_Base64(mensagem_Entrada.value)}\n</P></div>`;
       }
     }
-}
 );
 
 
