@@ -16,6 +16,7 @@
     --corDeFundo: rgb(61, 0, 79);
     --corDeFundo02: rgb(38, 0, 49);
     --corDoTexto: rgb(255, 220, 255);
+    --corDasCaixas: rgb(255, 247, 255);
 }
 
 body
@@ -114,7 +115,7 @@ main
     display: flex;
     flex-direction: column;
     gap: 5px;
-    display: ;
+    
 }
 
 .botao-principal
@@ -144,4 +145,26 @@ textarea
     border-radius: 5px;
     resize: none;
     padding: 10px;
+    background-color: var(--corDasCaixas);
+}
+
+.container-mensagem-saida
+{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--corDasCaixas);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 0px 10%;
+}
+
+#incremento 
+{
+    margin: 5px 0px 10px 0px;
+    border-radius: 5px;
+    padding: 5px;
+    color: var(--corDeFundo02);
+    background-color: var(--corDasCaixas);
 }

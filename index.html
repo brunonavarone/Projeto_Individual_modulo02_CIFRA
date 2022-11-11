@@ -31,9 +31,8 @@
                     </fieldset>
                 </div>
                 <div class="container-incremento">
-                    <label for="barrinha">Incremento</label>
-                    <input type="range" min="1" max="26" id="barrinha" name="barrinha-incremento">
-                    <label for="barrinha" id="numero-incremento">0</label>
+                    <label for="incremento">Incremento</label>
+                    <input type="number" min="0" max="26" id="incremento" name="incremento">
                 </div>
                 <div class="cartao-container-decodificar-codificar">
                     <fieldset class="container-decodificar-codificar">
@@ -52,9 +51,10 @@
                     <button id="botao-principal" class="botao-principal">Codificar</button>
                 </div>
                 <div>
-                    <div class="container-mensagem-decodificada">
+                    <div class="container-mensagem-saida">
                         <label>Resultado da operação:</label>
-                        <textarea name="mensagem" id="texto-saída"></textarea>
+                        <div>
+                        </div>
                     </div>
                 </div>
         </form>
