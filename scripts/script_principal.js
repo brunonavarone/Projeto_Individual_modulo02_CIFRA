@@ -73,6 +73,7 @@ botao_Principal.addEventListener("click", function (event)
 }
 );
 
+
 //funcao para codificar base4
 function codificar_Base64(valorCodificar)
 {

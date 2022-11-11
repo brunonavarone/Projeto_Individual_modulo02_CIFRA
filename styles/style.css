@@ -144,6 +144,7 @@ textarea
     border: 3px solid black;
     border-radius: 5px;
     resize: none;
+    color: var(--corDeFundo);
     padding: 10px;
     background-color: var(--corDasCaixas);
 }
@@ -156,6 +157,7 @@ textarea
     align-items: center;
     background-color: var(--corDasCaixas);
     padding: 15px;
+    color: var(--corDeFundo);
     border-radius: 5px;
     margin: 0px 10%;
 }
@@ -167,4 +169,31 @@ textarea
     padding: 5px;
     color: var(--corDeFundo02);
     background-color: var(--corDasCaixas);
+    cursor: pointer;
 }
+
+#iluminacao
+{
+    align-self:flex-start;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#iluminacao:hover
+{
+    background-color: var(--corDeFundo02);
+    border: solid 2px var(--corDoTexto);
+    color: var(--corDasCaixas);
+}
+
+.luz-escuridao:root
+{
+    --corDeFundo: rgb(230, 212, 230);
+    --corDeFundo02: rgb(255, 220, 255);
+    --corDoTexto: rgb(110, 23, 137);
+    --corDasCaixas: rgb(68, 29, 78);
+}
+
