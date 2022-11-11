@@ -97,7 +97,7 @@ function codificar_Cifra(entradaTexto, incremento)
       if(array_Letras.includes(agrupador_Array_Letras[contador]))
       {
           agrupador_Array_Letras[contador] = array_Letras[(array_Letras.indexOf(agrupador_Array_Letras[contador]) + incremento) % 26];
-          /*arrayTemporario[i] = cifraDeCesar[(cifraDeCesar.indexOf(arrayTemporario[i]) + incremento) % 26];*/
+         
       }
       else if(array_Letras.includes(agrupador_Array_Letras[contador].toUpperCase()))
       {
